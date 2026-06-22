@@ -1,0 +1,40 @@
+# ============================================================
+# NOVEL_AUTOMATION 設定（小説制作パイプライン）
+# ============================================================
+
+# --- APIキー ---
+api_keys:
+  anthropic: ""           # 環境変数 ANTHROPIC_API_KEY から自動取得
+  openai: ""           # 環境変数 OPENAI_API_KEY から取得（元の鍵はマスク済み・要再設定）
+  notion_token: ""     # 環境変数 NOTION_TOKEN から取得（元の鍵はマスク済み・要再設定）
+  gemini: ""           # 環境変数 GEMINI_API_KEY から取得（元の鍵はマスク済み・要再設定）
+
+# --- Notion データベースID ---
+# 実際のIDは環境変数 or ローカルの非公開configで指定（下記はプレースホルダー）
+notion_dbs:
+  idea_db: "YOUR_NOTION_IDEA_DB_ID"            # ①アイデア出しDB
+  character_db: "YOUR_NOTION_CHARACTER_DB_ID"  # ②キャラクター設計DB
+  plot_db: "YOUR_NOTION_PLOT_DB_ID"            # ③四幕構成プロットDB
+  chapter_db: "YOUR_NOTION_CHAPTER_DB_ID"      # ④章構成プロットDB
+  scene_db: "YOUR_NOTION_SCENE_DB_ID"          # ⑤シーン構成DB
+  draft_db: "YOUR_NOTION_DRAFT_DB_ID"          # ⑥初版文章DB
+  dialogue_db: "YOUR_NOTION_DIALOGUE_DB_ID"    # ⑦対話強化DB
+  description_db: "YOUR_NOTION_DESCRIPTION_DB_ID"  # ⑧描写強化DB
+  revision_db: "YOUR_NOTION_REVISION_DB_ID"    # ⑨改稿DB
+
+# --- AIモデル設定 ---
+models:
+  chatgpt_think: "o3"
+  claude_haiku: "claude-haiku-4-5-20251001"
+  claude_sonnet: "claude-sonnet-4-5"
+
+# --- 小説タイプ（short/medium/long）---
+novel_type: "short"
+
+# --- トーンモード（casual / hard）---
+# short/medium は省略時に casual が自動適用される
+# hard にしたい場合のみ明示する
+tone_mode: "casual"
+
+# --- 視点ルール（S05実行時に自動上書きされる）---
+# viewpoint_rule はここに書かず、S05実行時に自動生成される
